@@ -23,7 +23,7 @@ class App extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(18, 18, 18, 1),
         body: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 25,
+            horizontal: 20,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,6 +78,7 @@ class App extends StatelessWidget {
               const SizedBox(height: 15,
                 ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
                     decoration: const BoxDecoration(
@@ -85,7 +86,7 @@ class App extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(45)),
                     ),
                     child:const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 42),
                       child: Text(
                         "Transfer",
                         style:TextStyle(
@@ -95,8 +96,22 @@ class App extends StatelessWidget {
                       ),
                     )
                  ),
-                 Container(child:const Text("Request"),
-                 ),
+                 Container(
+                    decoration: const BoxDecoration(
+                      color: Color.fromRGBO(31, 33, 35, 1),
+                      borderRadius: BorderRadius.all(Radius.circular(45)),
+                    ),
+                    child:const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 42),
+                      child: Text(
+                        "Request",
+                        style:TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
+                      ),
+                    )),
                 ],
               )
             ],
