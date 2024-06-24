@@ -1,14 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
-class Player {
-  String? name;
-  Player();
-}
+import 'package:toonflix/widgets/button.dart';
 
 void main() {
-  var jason = Player();
   runApp(const App());
 }
 
@@ -17,7 +12,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color.fromRGBO(18, 18, 18, 1),
@@ -54,7 +48,7 @@ class App extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
               const SizedBox(height: 90),
@@ -77,43 +71,90 @@ class App extends StatelessWidget {
                 ),
               const SizedBox(height: 15,
                 ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.all(Radius.circular(45)),
-                    ),
-                    child:const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 42),
-                      child: Text(
-                        "Transfer",
-                        style:TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    )
-                 ),
-                 Container(
-                    decoration: const BoxDecoration(
-                      color: Color.fromRGBO(31, 33, 35, 1),
-                      borderRadius: BorderRadius.all(Radius.circular(45)),
-                    ),
-                    child:const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 42),
-                      child: Text(
-                        "Request",
-                        style:TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
-                        ),
-                      ),
-                    )),
+                  Button(text: "Transfer", bgColor: Colors.amber, textColor: Colors.black,),
+                  Button(text: "Request", bgColor: Color.fromRGBO(31, 33, 35, 1), textColor: Colors.white,),
                 ],
-              )
+              ),
+              const SizedBox(height: 80),
+              const Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+              Text("Wallets",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 36,
+                fontWeight: FontWeight.w600,
+                ),
+              ), 
+              Text("View All",
+              style: TextStyle(
+                color: Color.fromRGBO(255, 255, 255, 0.7),
+                fontSize: 18,
+                fontWeight: FontWeight.w400,
+                  ),
+                 ),
+                ],
+              ),
+              const SizedBox(height: 25,
+              ),
+              Container(
+                clipBehavior: Clip.hardEdge,
+                decoration: BoxDecoration(
+                  color: const Color.fromRGBO(31, 33, 35, 1),
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child:  Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                      Text('Euro',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 32,
+                        fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      Row(children: [
+                        Text('6 428',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          ),
+                        ),
+                        SizedBox(width: 5,),
+                        Text('EUR', 
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 0.7),
+                          fontSize: 20,
+                          ),
+                        ),
+                      ],
+                      ),
+                    ],
+                    ),
+                    Transform.scale(
+                      scale: 2.8,
+                      child: Transform.translate(
+                        offset: const Offset(8,11),
+                        child: const Icon(Icons.euro_rounded,
+                        color: Colors.white,
+                        size: 70,
+                        ),
+                      ),
+                    ),
+                   ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
