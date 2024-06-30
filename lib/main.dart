@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:toonflix/widgets/%08currency_card.dart';
 import 'package:toonflix/widgets/button.dart';
 
 void main() {
@@ -12,150 +13,133 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromRGBO(18, 18, 18, 1),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 80,
-              ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        "Hey, Selena",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 28,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      Text(
-                        "Welcome back",
-                        style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 0.6),
-                          fontSize: 19,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 90),
-              const Text(
-                'Total Balance',
-                  style: TextStyle(
-                    color: Color.fromRGBO(255, 255, 255, 0.8), 
-                    fontSize: 22,
-                  ),
-                ),
-              const SizedBox(height: 5,
-                ),
-              const Text(
-                '\$5 194 482',
-                  style: TextStyle(
-                    color: Color.fromRGBO(255, 255, 255, 1), 
-                    fontSize: 48,
-                    fontWeight:FontWeight.bold,
-                  ),
-                ),
-              const SizedBox(height: 15,
-                ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Button(text: "Transfer", bgColor: Colors.amber, textColor: Colors.black,),
-                  Button(text: "Request", bgColor: Color.fromRGBO(31, 33, 35, 1), textColor: Colors.white,),
-                ],
-              ),
-              const SizedBox(height: 80),
-              const Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        backgroundColor: Color.fromRGBO(18, 18, 18, 1),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              Text("Wallets",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 36,
-                fontWeight: FontWeight.w600,
+                SizedBox(
+                  height: 70,
                 ),
-              ), 
-              Text("View All",
-              style: TextStyle(
-                color: Color.fromRGBO(255, 255, 255, 0.7),
-                fontSize: 18,
-                fontWeight: FontWeight.w400,
-                  ),
-                 ),
-                ],
-              ),
-              const SizedBox(height: 25,
-              ),
-              Container(
-                clipBehavior: Clip.hardEdge,
-                decoration: BoxDecoration(
-                  color: const Color.fromRGBO(31, 33, 35, 1),
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child:  Padding(
-                  padding: const EdgeInsets.all(30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                      Text('Euro',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 32,
-                        fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      SizedBox(height: 10,),
-                      Row(children: [
-                        Text('6 428',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
+                        Text(
+                          "Hey, Selena",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
-                        SizedBox(width: 5,),
-                        Text('EUR', 
-                        style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 0.7),
-                          fontSize: 20,
+                        Text(
+                          "Welcome back",
+                          style: TextStyle(
+                            color: Color.fromRGBO(255, 255, 255, 0.6),
+                            fontSize: 19,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                       ],
-                      ),
-                    ],
                     ),
-                    Transform.scale(
-                      scale: 2.8,
-                      child: Transform.translate(
-                        offset: const Offset(8,11),
-                        child: const Icon(Icons.euro_rounded,
-                        color: Colors.white,
-                        size: 70,
-                        ),
-                      ),
-                    ),
-                   ],
-                  ),
+                  ],
                 ),
-              ),
-            ],
+                SizedBox(height: 60),
+                Text(
+                  'Total Balance',
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 0.8), 
+                      fontSize: 22,
+                    ),
+                  ),
+                SizedBox(height: 5,
+                  ),
+                Text(
+                  '\$5 194 482',
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 1), 
+                      fontSize: 48,
+                      fontWeight:FontWeight.bold,
+                    ),
+                  ),
+                SizedBox(height: 15,
+                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Button(text: "Transfer", bgColor: Colors.amber, textColor: Colors.black,),
+                    Button(text: "Request", bgColor: Color.fromRGBO(31, 33, 35, 1), textColor: Colors.white,),
+                  ],
+                ),
+                SizedBox(height: 60),
+                Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                Text("Wallets",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 36,
+                  fontWeight: FontWeight.w600,
+                  ),
+                ), 
+                Text("View All",
+                style: TextStyle(
+                  color: Color.fromRGBO(255, 255, 255, 0.7),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                    ),
+                   ),
+                  ],
+                ),
+                SizedBox(height: 25,
+                ),
+                CurrencyCard(
+                  name: 'Euro', 
+                  code: 'EUR', 
+                  amount: '6 428', 
+                  icon: Icons.euro_rounded,
+                  isInverted: false,
+                  order: 1,),
+                CurrencyCard(
+                  name: 'Bitcoin', 
+                  code: 'BTC', 
+                  amount: '9 731', 
+                  icon: Icons.currency_bitcoin_rounded,
+                  isInverted: true,
+                  order: 2,),
+               CurrencyCard(
+                  name: 'Dollar', 
+                  code: 'USD', 
+                  amount: '3 581', 
+                  icon: Icons.attach_money_rounded, 
+                  isInverted: false,
+                  order: 3,),
+              CurrencyCard(
+                name: 'Won', 
+                code: 'KRW', 
+                amount: '2 135 462', 
+                icon: Icons.android_sharp,  //won ₩ icon doesn't exist
+                isInverted: true,
+                order: 4,),
+            CurrencyCard(
+                name: 'Yen', 
+                code: 'JPY', 
+                amount: '51 628', 
+                icon: Icons.currency_yen_rounded,  //won ₩ icon doesn't exist
+                isInverted: false,
+                order: 5,)
+              ],
+            ),
           ),
         ),
       ),
